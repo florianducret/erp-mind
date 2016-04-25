@@ -56,7 +56,7 @@
 		<hr>
 
 		<ul class="list-group block">
-			@foreach($todos as $todo)
+			@foreach(Auth::user()->todos as $todo)
 				<li class="list-group-item">
 					<span class="badge">{{ $todo->getTempsRestant() }}</span>
 					{{ $todo->content }}
