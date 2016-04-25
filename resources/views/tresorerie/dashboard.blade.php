@@ -44,7 +44,7 @@
 
 @section('javascript')
 <script>
-    var url = "http://docs.google.com/gview?url=http://preview.z1w7grf14rseb3xr9gs81jq8ns1c3diyphw5z1n4z8semi.box.codeanywhere.com/files/shares/templates/tresorerie/";
+    var url = "http://docs.google.com/gview?url=http://erp-mindje.rhcloud.com/files/shares/templates/tresorerie/";
     
     $(".dropdown-menu li a").click(function(){
         $('iframe').slideUp('slow').delay(500).slideDown('slow');
