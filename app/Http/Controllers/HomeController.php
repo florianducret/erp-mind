@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
+use Auth;
+use Carbon\Carbon;
 use App\User;
 use App\Status;
 
@@ -30,7 +32,9 @@ class HomeController extends Controller
         $statuses = Status::whereNull('parent_id')
                             ->orderBy('created_at', 'desc')
                             ->get();
-        return view('home', ['statuses' => $statuses]);
+        Carbon::setlocale('fr');
+        $todos = Auth::user()->todos()->get();
+        return view('home', ['statuses' => $statuses, 'todos' => $todos]);
     }
     
     public function sendNotification()

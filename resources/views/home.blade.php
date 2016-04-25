@@ -26,6 +26,7 @@
 		</div>
 	</div>
 <br>
+
 <!--######################################################################################################-->
 
 <form class="row">
@@ -61,17 +62,28 @@
 <!--######################################################################################################-->
 
 <h3 class="page-header"><i class="fa fa-sticky-note"></i> Ma todo list</h3>
-<ul class="list-group">
-	<li class="list-group-item">Item 1 <label class="pull-right" > Terminé ? &nbsp;<input type="checkbox"></label></li>
-</ul>
-<div class="input-group">
-	<input type="text" class="form-control" placeholder="Nouvelle tâche">
-	<span class="input-group-btn">
-		<button type="button" class="btn btn-danger"><i class="fa fa-plus"></i>Ajouter</button>
-	</span>
-</div>
 
-<br>
+<ul id="todo-list" class="list-group">
+	@foreach($todos as $todo)
+		@include('layouts.todo')
+	@endforeach
+</ul>
+
+
+<form method="post" class="todo-form"> {!! csrf_field() !!}
+	<div class="col-md-6 form-group">
+		<label for="date">Description</label>
+		<input type="text" name="content" class="form-control" placeholder="Nouvelle tâche">
+	</div>
+	<div class=" col-md-6 form-group">
+		<label for="date">Deadline</label>
+		<input type="date" name="deadline" class="form-control" placeholder="Dead line">
+	</div>
+	<p class="text-center">
+		<button type="submit" class="btn btn-danger"><i class="fa fa-plus"></i>Ajouter</button>
+	</p>
+</form>
+
 <!--######################################################################################################-->
 
 <h3 class="page-header"><i class="fa fa-calendar"></i> Mon calendrier</h3>
@@ -83,4 +95,5 @@
 @section('javascript')
 	<script src="/js/post.js"></script>
 	<script src="/js/reply.js"></script>
+	<script src="/js/todo.js"></script>
 @endsection

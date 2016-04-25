@@ -4,44 +4,21 @@ use Illuminate\Support\Facades\App;
 
 Route::group(['middleware' => 'web'], function () {
     
-    Route::get('/', 'HomeController@index');
  	Route::auth();  
-
-    Route::get('/home', 'HomeController@index');
     
-	/*
-	 * Inscriptions
-	 */
-    Route::get('/pole/inscription', 'TeamController@inscriptionGet');
-    Route::post('/pole/inscription', 'TeamController@inscriptionPost');
-  	
-	/*
-	 * Tableaux de bord
-	 */
-	Route::controller('/tableauDeBord', 'TableauDeBordController');
-	
-	/*
-	 * Tresorerie
-	 */
-	Route::controller('/tresorerie', 'TresorerieController');
-  
-	/*
-	 * Administration
-	 */
-	Route::controller('/administration','AdministrationController');
+    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
 
-	/* 
-	 * Status
-	 */
+    Route::controller('/pole', 'TeamController');
+	Route::controller('/tableauDeBord', 'TableauDeBordController');
+	Route::controller('/todo', 'TodoController'); 
+	Route::controller('/tresorerie', 'TresorerieController');
+	Route::controller('/administration','AdministrationController');
+	
 	Route::post('/status', 'StatusController@status');
 	Route::post('/status/reply/{status_id}', 'StatusController@reply');
 	
-
-	/*
-	/*
-	 * Pages de recherche
-	 */
-    Route::get('/search/projets', function(){
+	Route::get('/search/projets', function(){
         return view('searchPanels.projets');
     });
 	

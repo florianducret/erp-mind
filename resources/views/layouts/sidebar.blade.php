@@ -56,28 +56,14 @@
 		<hr>
 
 		<ul class="list-group block">
-
-			<small>Todo list</small>
-			<li class="list-group-item">
-				<span class="badge">H -1</span>
-				<input type="checkbox" checked/> &nbsp; Effectuer un tâche
-			</li>
-
-			<li class="list-group-item">
-				<span class="badge">H -2</span>
-				<input type="checkbox" /> &nbsp; Remplir un papier important
-			</li>
-
-			<li class="list-group-item">
-				<span class="badge">J -10</span>
-				<input type="checkbox" /> &nbsp; Faire le rapport
-			</li>
-
-			<li class="list-group-item">
-				<span class="badge">J - 20</span>
-				<input type="checkbox" checked/> &nbsp; Autre document à remplir
-			</li>
+			@foreach($todos as $todo)
+				<li class="list-group-item">
+					<span class="badge">{{ $todo->getTempsRestant() }}</span>
+					{{ $todo->content }}
+				</li>
+			@endforeach
 		</ul>
+
 
 	</aside>
 

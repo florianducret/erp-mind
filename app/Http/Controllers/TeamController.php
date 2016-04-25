@@ -11,12 +11,12 @@ use App\User;
 
 class TeamController extends Controller
 {
-    function inscriptionGet()
+    function getInscription()
     {
         return view('pole.inscription');
     }
     
-    function inscriptionPost(Request $req)
+    function postInscription(Request $req)
     {
         $pole = $req->input('radio');
         $user = \Auth::user()->firstname;
