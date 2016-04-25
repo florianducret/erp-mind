@@ -1,0 +1,44 @@
+body *
+{
+    font-family: "Roboto";
+}
+
+#page-content
+{
+    padding-top: 70px;
+}
+
+.fa
+{
+    margin-right:1rem;
+/*     margin-left:1rem; */
+}
+
+.navbar-btn .fa
+{
+    margin-right : 0px;
+}
+
+.nav
+{
+    font-size: 0.9em;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus
+{
+    background : #222;
+}
+
+.navbar-inverse
+{
+    background : #222;
+}
+
+.table-hover tr
+{
+    cursor: pointer;
+}
+
+.navbar .popover {
+    min-width: 400px;
+}
