@@ -41,17 +41,6 @@ class TresorerieController extends Controller
 		$date = Carbon::createFromFormat('d/m/Y', $req->input('date-emission'))->addDays(30);
         $templateProcessor->setValue('date-echeance', htmlspecialchars($date->format('d/m/Y'), ENT_COMPAT, 'UTF-8'));
         $templateProcessor->saveAs('files/shares/temp_'.$req->input('reference-etude').'.docx');
-		
-		$teamId = Team::where('name', '=', 'Trésorerie')->first()->id;
-		$users = User::where('current_team_id', '=', $teamId);
-		
-		$str = "";
-		foreach($users as $user)
-		{
-			$str .= $user->firstname;
-		}
-
-		return '<pre>'.$str.'</pre>';
 	}
 	
 	public function getFacturedivers()

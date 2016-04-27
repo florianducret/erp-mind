@@ -49,7 +49,7 @@
     });
     
      $('.container').on('click', '.apercu', function() {
-         var url = "http://docs.google.com/gview?url=http://preview.z1w7grf14rseb3xr9gs81jq8ns1c3diyphw5z1n4z8semi.box.codeanywhere.com/files/shares/";
+         var url = "http://docs.google.com/gview?url=http://erp-mindje.rhcloud.com/files/shares/";
 
          $(this).parents('.panel').find('iframe').attr('src', url + "temp_" + reference + ".docx&embedded=true");
          $(this).parents('.panel').find('iframe').toggle('slow');

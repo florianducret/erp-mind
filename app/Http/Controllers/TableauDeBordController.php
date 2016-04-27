@@ -11,12 +11,12 @@ use App\Http\Requests;
 
 class TableauDeBordController extends Controller
 {
-    public function getQualité()
+    public function getQualite()
     {
         return view('qualite.tableauDeBord');
     }
     
-    public function postQualité(Request $req)
+    public function postQualite(Request $req)
     {
         $pusher = \App::make('pusher');
         if($req->input('etat') == "approuver")   

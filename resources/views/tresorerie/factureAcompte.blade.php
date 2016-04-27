@@ -10,7 +10,7 @@
 <h1 class="page-header text-center"><i class="fa fa-file-pdf-o"></i>Facture d'acompte</h1>
 
 <br>
-<form id="form" method="post" class="row">
+<form class="form-doc" method="post" class="row">
     {!! csrf_field() !!}
     <div class="col-md-5">
         <h3>Entrée manuelle</h3>
@@ -135,16 +135,16 @@
     /*
      * Affichage d'une alerte quand on génère le fichier
      */
-    $('.container').on('submit', '#form', function(){
-      //  $.post(loadUrl, $(this).serialize());
-        
-      //  return false;
+    $('.container').on('submit', '.form-doc', function(){
+        $.post(loadUrl, $(this).serialize());
+        swal("Document généré !", "Le document a été envoyé à la qualité", "success");
+        return false;
     });
     
     /*
      * Affichage de l'aperçu du document
      */
-    var url = "http://docs.google.com/gview?url=http://preview.z1w7grf14rseb3xr9gs81jq8ns1c3diyphw5z1n4z8semi.box.codeanywhere.com/files/shares/templates/tresorerie/";
+    var url = "http://docs.google.com/gview?url=http://erp-mindje.rhcloud.com/files/shares/templates/tresorerie/";
     $("iframe").attr('src', url + "Facture d'acompte.docx&embedded=true");
 
     

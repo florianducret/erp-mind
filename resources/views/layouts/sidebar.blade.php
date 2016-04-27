@@ -15,9 +15,10 @@
 					@endif
 				</p>
 				<p class="text-center">
-					<a href="{{ url('tableauDeBord/'.strtolower(Auth::user()->currentTeam->name)) }}"
+					<a href="tableauDeBord/{{strtolower(Auth::user()->currentTeam->name)}}"
 					   class="btn btn-danger block">
-						<i class="fa fa-users"></i>Tableau de bord de mon pôle</a>
+						<i class="fa fa-users"></i>Tableau de bord de mon pôle
+					</a>
 				</p>
 				<p class="text-center">
 					<a href="{{ url('/pole/inscription') }}" class="btn btn-success block"><i class="fa fa-refresh"></i>Changer de pôle</a>

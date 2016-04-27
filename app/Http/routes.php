@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\App;
+use App\Team;
+use App\User;
 
 Route::group(['middleware' => 'web'], function () {
     
@@ -22,6 +24,19 @@ Route::group(['middleware' => 'web'], function () {
         return view('searchPanels.projets');
     });
 	
+	Route::get('/teams', function() {
+
+		$team1 = new Team();
+		$team1->owner_id = User::where('firstname', 'Ahmed')->first()->getKey();
+		$team1->name = 'Trésorerie';
+		$team1->save();
+
+		$team2 = new Team();
+		$team2->owner_id = User::where('firstname', 'Alexandre')->first()->getKey();
+		$team2->name = 'Qualité';
+		$team2->save();
+	});
+
 	Route::get('/search/entreprises', function(){
         return view('searchEntreprises.entreprises');
     });
