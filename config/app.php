@@ -167,8 +167,6 @@ return [
         Snowfire\Beautymail\BeautymailServiceProvider::class,
         // Generate nice Calendar
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
-        // Categories
-        Baum\Providers\BaumServiceProvider::class,
         // Pusher
         Vinkla\Pusher\PusherServiceProvider::class,
         // File manager

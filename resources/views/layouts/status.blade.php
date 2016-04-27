@@ -10,13 +10,13 @@
             </a>
         </h4>
 
-        <p>{{ $status->body }}</p>
+        <p style="width:450px;text-align: justify;word-wrap: break-word;">{{ $status->body }}</p>
         <ul class="list-inline">
             <li>{{ $status->created_at->diffForHumans() }}</li>
         </ul>
         <br>
 
-        <div id="replies-{{$status->id}}">
+        <div id="replies-{{$status->id}}">  
             @foreach($status->replies as $reply)
                 @include('layouts.replies')
             @endforeach

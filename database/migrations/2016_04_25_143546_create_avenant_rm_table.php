@@ -14,7 +14,6 @@ class CreateAvenantRmTable extends Migration
     {
         Schema::create('avenant_rm', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('mission_id');
             $table->string('reference')->unique();
 
             $table->date('date');

@@ -54,10 +54,19 @@
 
 <div class="col-md-5 col-md-offset-1">
 
-<h3 class="page-header"><i class="fa fa-users"></i> Membres de mon pôle</h3>
-<div class="well">Nous n'êtes inscrit dans aucun pôle pour le moment.</div>
+<h3 class="page-header"><i class="fa fa-street-view"></i> Membres de mon pôle</h3>
+<div class="well">Vous n'êtes inscrit dans aucun pôle pour le moment.</div>
 
-<a href="/pole/inscription" class="btn btn-success"><i class="fa fa-plus"></i> M'inscrire à un pôle</a>
+<p class="text-center">
+	<a href="/pole/inscription" class="btn btn-success btn-sm">
+		<i class="fa fa-plus"></i> M'inscrire à un pôle
+	</a>
+</p>
+<br>
+<!--######################################################################################################-->
+
+<h3 class="page-header"><i class="fa fa-calendar"></i> Mon calendrier</h3>
+<div class="well">En construction :(</div>
 <br>
 <!--######################################################################################################-->
 
@@ -69,7 +78,6 @@
 	@endforeach
 </ul>
 
-
 <form method="post" class="todo-form"> {!! csrf_field() !!}
 	<div class="col-md-6 form-group">
 		<label for="date">Description</label>
@@ -77,16 +85,23 @@
 	</div>
 	<div class=" col-md-6 form-group">
 		<label for="date">Deadline</label>
-		<input type="date" name="deadline" class="form-control" placeholder="Dead line">
+		<input type="date" name="deadline" class="form-control" placeholder="jj-mm-aaaa">
 	</div>
 	<p class="text-center">
-		<button type="submit" class="btn btn-danger"><i class="fa fa-plus"></i>Ajouter</button>
+		<button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>Ajouter une tâche</button>
 	</p>
 </form>
-
+<br>
 <!--######################################################################################################-->
 
-<h3 class="page-header"><i class="fa fa-calendar"></i> Mon calendrier</h3>
+<h3 class="page-header"><i class="fa fa-users"></i> Mes groupes</h3>
+<button class="btn btn-sm btn-primary"><i class="fa fa-users"></i>Former un groupe</button>
+<button class="btn btn-sm btn-info pull-right"><i class="fa fa-user-plus"></i>Rejoindre un groupe</button>
+<br>
+<br>
+<div class="well">Aucun groupe pour le moment.</div>
+
+
 
 </div>
 @endsection

@@ -15,8 +15,8 @@ class CreateArticleModifieTable extends Migration
         Schema::create('article_modifie', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('avenant_cc_id');
-            $table->string('reference')->unique();
             
+            $table->string('reference')->unique();
             $table->integer('numero_article');
             $table->string('titre');
             

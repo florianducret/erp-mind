@@ -3,6 +3,15 @@ body *
     font-family: "Roboto";
 }
 
+.btn {
+	font-family: "Roboto";
+	border-radius: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;		
+}
+
 #page-content
 {
     padding-top: 70px;

@@ -57,4 +57,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Todolist', 'user_id');
     }
+
+    public function missions()
+    {
+        return $this->hasMany('App\Mission', 'user_id');
+    }
 }

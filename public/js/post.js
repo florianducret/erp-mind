@@ -12,13 +12,3 @@ $(".container").on('submit', '.status-form', function(){
     return false;
 
 });
-
-$('[name=status]').on('input', function(e){
-    var inputLength = $('[name=status]').val().length;
-    if(500 - inputLength <= 0) {
-        console.log($('[name=status]').val());
-        $('[name=status]').val($('[name=status]').val().substr(0, 499));
-        inputLength = 500;
-    }
-    $('#chars-count').text(500 - inputLength);
-});

@@ -25,13 +25,10 @@ class StatusController extends Controller
 		$status = Status::notReply()->find($statusId);
 		$user =  $status->_user();
 
-		if(Auth::user()->id !== $user->id) {
-			return redirect('/');
-		}
-
 		$reply = Status::create([
 			'body' => $request->input('reply-'.$statusId),
 		]);
+
 		$reply->user()->associate(Auth::user());
 		$status->replies()->save($reply);
 

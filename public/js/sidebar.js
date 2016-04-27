@@ -6,10 +6,9 @@ animation
 		padding: "0 20px"
 	}, "#depart")
 
-.to('#page-content-wrapper', 0.5, {
+.to('#page-content-wrapper', 0.7, {
 	x:200,
-	scale:0.9,
-	ease: Back.easeOut
+	ease: Back.easeInOut
 }, "#depart")
 
 .staggerFrom('#sidebar-wrapper *', 0.5, {
