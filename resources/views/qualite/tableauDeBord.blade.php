@@ -56,7 +56,7 @@
      });
 
     $('.container').on('click', '.approuver', function() {
-        $.post('/tableauDeBord/qualité', { text: text, etat:"approuver", reference: reference});
+        $.post('/tableauDeBord/qualite', { text: text, etat:"approuver", reference: reference});
         var ligne = $(this).parents('.row');
 
         TweenMax.to(ligne, 0.5, {
@@ -74,7 +74,7 @@
     
     
     $('.container').on('click', '.refuser', function() {
-        $.post('/tableauDeBord/qualité', { text: text, etat: "refuser"});
+        $.post('/tableauDeBord/qualite', { text: text, etat: "refuser"});
         var ligne = $(this).parents('.row');
 
         TweenMax.to(ligne, 0.5, {
